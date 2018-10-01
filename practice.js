@@ -1,3 +1,6 @@
+//space log n 
+//time klogn n being the size of the input and k being the legnt of an individual string
+
 var reorderedPowerOf2 = function(N) {
     let highestN = N.toString().split('').sort((a,b) => b - a).join('');
     let cache = cacheBuilder(parseInt(highestN));
