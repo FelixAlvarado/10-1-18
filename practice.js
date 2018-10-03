@@ -15,7 +15,6 @@ var reorderedPowerOf2 = function(N) {
             counterHash[stringN[j]] = 1;
         }
     }
-    
     let counterString = JSON.stringify(counterHash);
     let valueArr = Object.values(cache);
     for(let k = 0; k < valueArr.length; k ++){
@@ -39,9 +38,7 @@ function cacheBuilder(x){
                 cache[current][currentX[i]] = 1;
             }
         }
-        
         current = current * 2;
-        
     }
     return cache;
 }
