@@ -1,0 +1,1 @@
+left shift n << i same as n ^ i
