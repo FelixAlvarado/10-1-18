@@ -4,3 +4,8 @@ promises vs callbacks
 
 promises are asynchronous callbacks. They are easier to read, and .catch() can be used for mutiple .then() statements. This eliminates err or boilerplate .then can also be chained. 
 
+is nodeJS single threaded? 
+IS rails single threaded? 
+
+node: yes 
+rails: can be either single or mult depnding on app server and implimentation of rails your'e using. 
