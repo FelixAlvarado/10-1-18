@@ -9,3 +9,9 @@ IS rails single threaded?
 
 node: yes 
 rails: can be either single or mult depnding on app server and implimentation of rails your'e using. 
+
+Describe HTTP Head and options methods 
+
+Head: indentical to get, but without response body. Useful for checking if get request will return before actually making get request 
+
+options: describes commonication options for the target resource 
