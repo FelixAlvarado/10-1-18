@@ -36,3 +36,45 @@ var countRangeSum = function(nums, lower, upper) {
         // System.arraycopy(cache, 0, sums, start, t - start);
         return count;
     }
+
+
+    //right solution
+    const countRangeSum = (nums, lower, upper) => {
+
+        let sums = [0];
+        let ret = 0;
+        let last = 0;
+    
+        let firstge = value => {
+            // first greater than or equal to
+            let l = 0,
+                r = sums.length,
+                m;
+    
+            do {
+                m = Math.floor((r + l) / 2);
+    
+                sums[m] < value ? l = m : r = m;
+    
+            } while (r >= l + 2);
+    
+            while (r > 0 && sums[r - 1] >= value ) {
+                r -= 1;
+            }
+    
+            return r;
+        };
+    
+        nums.forEach(num => {
+    
+            last = last + num;
+    
+            ret += firstge(last - lower + 1) - firstge(last - upper);
+    
+            sums.splice(firstge(last), 0, last);
+    
+        });
+    
+        return ret;
+    
+    };
