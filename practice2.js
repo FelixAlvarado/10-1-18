@@ -1,48 +1,22 @@
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
-/**
- * @param {ListNode} head
- * @return {ListNode}
- */
+function ListNode(val) {
+         this.val = val;
+         this.next = null;
+    }
+
 var oddEvenList = function(head) {
-    if(!head.next || !head.next.next) return head;
-      if (!head.next.next.next){
-          let second = head.next;
-          second.next = null;
-          head.next = head.next.next;
-          head.next.next = second;
-          return head;
+    let start = odd = new ListNode(0);
+    let start2 = even = new ListNode(0);
+      while (head){
+          odd.next = head;
+          even.next = head.next;
+          odd = odd.next
+          even = even.next
+          if(even){
+              head = head.next.next;
+          }else{
+              head = null
+          }
       }
-      
-      let currentEven = head.next.next.next;
-      let second = head.next;
-      second.next = currentEven;
-      
-      let currentOdd = head.next.next;
-      head.next = currentOdd;
-      
-      
-      while(currentOdd.next || currentEven.next){
-        if (currentOdd && currentOdd.next && currentOdd.next.next) {
-            currentOdd.next = currentOdd.next.next;
-            currentOdd = currentOdd.next;
-        }else {
-            currentOdd.next = null;
-        }  
-       if (currentEven && currentEven.next && currentEven.next.next) {
-            currentEven.next = currentEven.next.next;
-            currentEven = currentEven.next;
-        }else {
-            currentEven.next = null;
-        }  
-      
-      }
-      currentOdd.next = second; 
-      return head;
-      
+      odd.next = start2.next;
+      return start.next;
   };
