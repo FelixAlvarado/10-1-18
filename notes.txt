@@ -16,3 +16,12 @@ Head: indentical to get, but without response body. Useful for checking if get r
 
 options: describes commonication options for the target resource 
 
+main ways to debug in react/ruby/node.js? 
+
+react: react dev tools crhome extension. Can see attributes of componenets, go line by line, and see variables in scrope. 
+
+Ruby: byebug (similar features) 
+
+nodeJS: node --inspect <filename> allows for debugging in chrom dev tools as you would with regular javascript code. postman is used to test for routes. 
+
+
