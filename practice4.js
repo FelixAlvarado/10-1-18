@@ -53,3 +53,20 @@ var partitionLabels = function(S) {
     }
     return result;
 };
+
+
+//faster answer
+var partitionLabels = function(S) {
+    var result=[];
+    var maxIndex=-1;
+    let lastIdx = 0;
+    for(var i=0;i<S.length;i++){
+    var cur=-1;
+    maxIndex=Math.max(maxIndex,cur=S.indexOf(S[i],i+1));
+    if(cur<0 && i>=maxIndex){
+    result.push(i + 1 - lastIdx);
+        lastIdx = i + 1;
+    }
+    }
+    return result;
+    }
