@@ -7,6 +7,10 @@ promises are asynchronous callbacks. They are easier to read, and .catch() can b
 is nodeJS single threaded? 
 IS rails single threaded? 
 
+
+
+
+
 node: yes 
 rails: can be either single or mult depnding on app server and implimentation of rails your'e using. 
 
