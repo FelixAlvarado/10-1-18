@@ -3,6 +3,10 @@ function ListNode(val) {
          this.next = null;
     }
 
+
+
+
+    
 var oddEvenList = function(head) {
     let start = odd = new ListNode(0);
     let start2 = even = new ListNode(0);
